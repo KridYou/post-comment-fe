@@ -13,7 +13,7 @@ export default function LoginPage() {
     e.preventDefault();
     setError("");
     try{
-    const response = await fetch("http://localhost:3002/auth/login", { // Adjust API URL
+    const response = await fetch("http://localhost:3000/auth/login", { // Adjust API URL
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
