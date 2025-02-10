@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  nextjs:
+    build:
+      context: .  # Since this file is inside frontend/, use `.` instead of `./frontend`
+      dockerfile: Dockerfile
+    container_name: next_app-data_wow
+    restart: always
+    environment:
+      NEXT_PUBLIC_API_URL: http://nestjs:3000
+    ports:
+      - "3001:3000"
+    networks:
+      - nest_network
+    volumes:
+      - .:/app  # Mount frontend directory
+
+networks:
+  nest_network:
+    external: true
