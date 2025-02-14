@@ -1,33 +1,28 @@
-import SessionProviderWrapper from "@/components/SessionProviderWrapper";
-import { AppBar, Toolbar, Typography, Button } from "@mui/material";
-import Link from "next/link";
+"use client";
+import Navbar from "@/components/Navbar";
+import Sidebar from "../components/Sidebar";
+import "./globals.css";
+import { usePathname } from "next/navigation";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const pathname = usePathname();
+
+  const noLayoutRoutes = ["/login"];
+  const shouldDisplayLayout = !noLayoutRoutes.includes(pathname);
   return (
-    <SessionProviderWrapper>
-      <html lang="en">
-        <body className="min-h-screen flex flex-col">
-          {/* Navbar */}
-          <AppBar position="static">
-            <Toolbar className="flex justify-between">
-              <Typography variant="h6">
-                <Link href="/">My App</Link>
-              </Typography>
-              <Button color="inherit">
-                <Link href="/login">Login</Link>
-              </Button>
-            </Toolbar>
-          </AppBar>
-
-          {/* Page Content */}
-          <main className="flex-1 p-4">{children}</main>
-
-          {/* Footer */}
-          <footer className="text-center p-4 bg-gray-100">
-            <Typography variant="body2">© 2025 My App. All rights reserved.</Typography>
-          </footer>
-        </body>
-      </html>
-    </SessionProviderWrapper>
+    <html>
+      <body>
+        {shouldDisplayLayout && <Navbar />}
+        <div className="flex">
+          {shouldDisplayLayout && <Sidebar />}
+          <main className="flex">{children}</main>
+          {shouldDisplayLayout && (
+            <div className="w-64 bg-orange-200">empty space</div>
+          )}
+        </div>
+      </body>
+    </html>
   );
-}
+};
+
+export default Layout;

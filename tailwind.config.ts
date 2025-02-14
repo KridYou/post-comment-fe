@@ -8,9 +8,13 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        castoro: ["Castoro"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "Green-Success": "#49A569",
+        "Green-300": "#2B5F44",
+        "Green-500": "#243831",
       },
     },
   },
