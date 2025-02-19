@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "dev": "next dev",
+=======
+    "dev": "cross-env PORT=3001 next dev",
+>>>>>>> fix
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -22,7 +26,11 @@
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.23.0",
     "@typescript-eslint/parser": "^8.23.0",
+<<<<<<< HEAD
     "autoprefixer": "^10.4.20",
+=======
+    "cross-env": "^7.0.3",
+>>>>>>> fix
     "eslint": "^9.20.0",
     "eslint-config-next": "^15.1.6",
     "eslint-config-prettier": "^10.0.1",
