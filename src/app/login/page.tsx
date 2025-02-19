@@ -36,11 +36,11 @@ export default function LoginPage() {
   };
 
   return (
-    <html>
+    <html lang='en'>
       <body>
-        <div className="flex flex-col sm:flex-row text-white min-h-screen min-w-screen bg-Green-500">
-          <div className="min-h-screen flex flex-1 justify-center min-w-screen items-center">
-            <div>
+        <div className="flex flex-col sm:flex-row text-white min-h-[450px] sm:min-h-screen min-w-screen bg-Green-500">
+          <div className="order-2 sm:order-1 flex flex-1 justify-center items-center min-h-[450px] sm:min-h-screen min-w-screen sm:min-w-[808px]">
+            <div className="mx-[16px]">
               <h2 className="text-xl font-bold mb-4">Sign in</h2>
               {error && <p className="text-red-500">{error}</p>}
               <form onSubmit={handleLogin} className="space-y-4">
@@ -56,22 +56,22 @@ export default function LoginPage() {
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full p-2 border rounded"
+                  className="w-full p-2 border rounded bg-white"
                 />
                 <button
                   type="submit"
-                  className="w-full bg-Green-Success text-white p-2 rounded"
+                  className="w-full bg-Green-Success text-white p-2 rounded mb-4"
                 >
                   Sign in
                 </button>
               </form>
             </div>
           </div>
-          <div className="bg-Green-300 min-h-screen rounded-l-3xl flex justify-center items-center sm:ml-auto">
-            <div className="flex flex-col items-center">
+          <div className="order-1 sm:order-2 bg-Green-300 flex justify-center items-center  min-h-[362px] sm:min-w-[632px] rounded-b-3xl sm:rounded-l-3xl ">
+            <div className="flex flex-col items-center ">
               <div
-                className="relative"
-                style={{ width: "299.61px", height: "230px" }}
+                className="relative w-[171.46px] h-[131.62px] sm:w-[299.61px] sm:h-[230px]"
+                // style={{ width: "171.46px", height: "131.62px" }}
               >
                 <Image
                   src="/images/white-board.png"

@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const noLayoutRoutes = ["/login"];
   const shouldDisplayLayout = !noLayoutRoutes.includes(pathname);
   return (
-    <html>
+    <html lang="en">
       <body>
         {shouldDisplayLayout && <Navbar />}
         <div className="flex">
